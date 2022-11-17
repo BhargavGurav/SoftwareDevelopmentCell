@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% block title %}Profile{% endblock title %}
+
+{% block nav-brand %}
+    <a class="navbar-brand ms-2 fs-3" href="#" style="font-family: cursive;">{{ user.first_name}} {{ user.last_name }}</a>
+{% endblock nav-brand %}
+
+{% block user %}
+<li class="nav-item">
+    <button class="btn btn-sm btn-outline-warning mt-1" data-bs-toggle="modal" data-bs-target="#logout">Logout</button>
+</li>
+{% endblock %}
+
+{% block data1 %}
+<div class="container-fluid" id="profile">
+    <div class="row p-4 d-flex justify-content-center align-items-center" id="profile-container">
+        <div class="col-lg-4 col-md-6 col-sm-7 col-9" id="info-table">
+            <div class="col-12 btn btn-outline-light mb-2">Details</div>
+            <table class="table table-bordered text-light" >
+                <tr>
+                    <td>Name</td>
+                    <td>{{ user.first_name}} {{ user.last_name }}</td>
+
+                </tr>
+                <tr>
+                    <td>Email-ID</td>
+                    <td>{{ user.email }}</td>
+                </tr>
+                <tr>
+                    <td>Mobile</td>
+                    <td>{{ student.Mobile }}</td>
+                </tr>
+                <tr>
+                    <td>PRN</td>
+                    <td>{{ student.PRN }}</td>
+                </tr>
+                <tr>
+                    <td>Branch</td>
+                    <td>{{ student.Branch }}</td>
+                </tr>
+                <tr>
+                    <td>Year of Study</td>
+                    <td>{{ student.Year }}</td>
+                </tr>
+                <tr>
+                    <td>Coding Profile</td>
+                    <td><a href="{% url 'coding' %}" class="text-decoration-none">Click here</a></td>
+                </tr>
+                
+            </table>
+            <div class="d-grid">
+                <a class="btn btn-outline-light"  href="{% url 'edit' %}"><i class="fas fa-pen"></i> Edit</a>
+            </div>
+        </div>
+
+       
+    </div>
+</div>
+{% endblock data1 %}
+

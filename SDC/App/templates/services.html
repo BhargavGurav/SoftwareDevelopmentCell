@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Services{% endblock title %}
+{% block services %}{% endblock %}
+
+{% block nav-brand %}
+    <a class="navbar-brand ms-2 fs-3" href="#" style="font-family: cursive;">Services</a>
+{% endblock nav-brand %}
+
+{% block data1 %}
+<div class="container-fluid" id="services">
+    <div class="row d-flex justify-content-center services-content">
+    
+        <div class="col-lg-3 col-sm-6 col-8 p-4">
+            <div class="service-box card">
+                <img src="{% static 'images/web_development.jpg' %}" alt="" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title">Web Development</h5>
+                    <p class="card-text">We develop fully working websites for clients. These sites are responsive in nature so that any device has beautiful interface.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-sm-6 col-8 p-4">
+            <div class="service-box card">
+                <img src="{% static 'images/Software-Development.jpg' %}" alt="" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title">Software Development</h5>
+                    <p class="card-text">We develop custome softwares for clients. These softwares has beautiful interface and smooth working.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-sm-6 col-8 p-4">
+            <div class="service-box card">
+                <img src="{% static 'images/mobile_app.png' %}" alt="" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title">Application Development</h5>
+                    <p class="card-text">We design android applications also ios applications. We focus on overall aspects of application so that client and user dosen't face any problem.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-sm-6 col-8 p-4">
+            <div class="service-box card">
+                <img src="{% static 'images/graphic-design.jpg' %}" alt="" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title">Graphic Design</h5>
+                    <p class="card-text">Graphic designing is one of our special services. We have a group of brilliant designers who comes up with great ideas and always make client feel satisfied.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-sm-6 col-8 p-4">
+            <div class="service-box card">
+                <img src="{% static 'images/video-editing.jpg' %}" alt="" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title">Video Editing </h5>
+                    <p class="card-text">We have all the resources that are useful to create very attractive videos. We provide video making, editing services for various occasions.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-sm-6 col-8 p-4">
+            <div class="service-box card">
+                <img src="{% static 'images/content_writing.jpeg' %}" alt="" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title">Content Writing</h5>
+                    <p class="card-text">We also provide content writing service. There are several brilliant writers in our team. They never let client down. They always come up with great content.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock data1 %}

@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Coding Profile{% endblock title %}
+{% block nav-brand %}
+    <a class="navbar-brand ms-2 fs-3" href="#" style="font-family: cursive;">{{ user.first_name}} {{ user.last_name }}</a>
+{% endblock nav-brand %}
+
+{% block data1 %}
+<div class="container-fluid " id="coding-container">
+    <div class="row d-flex justify-content-around align-items-center" id="coding-container-row">
+        {% if Coder %}
+            <div class="col-lg-5 col-8 p-3 my-sm-2 my-2" id="coder-box" data-aos="fade-left" data-aos-duration="1500" data-aos-easing="ease-in-sine">
+                <div class="col-12 btn btn-dark">Leetcode Profile</div>
+                <div class="coding-profile mt-2 mb-0">
+                    <div class="coding-info d-grid">
+                        <a href="{{ Coder.Leetcode }}" target="_blank" class="btn btn-outline-light">Click to See profile</a>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="col-lg-5 col-8 p-3 my-sm-2 my-2" id="coder-box" data-aos="fade-right" data-aos-duration="1500" data-aos-easing="ease-in-sine">
+                <div class="col-12 btn btn-dark">Hackerrank Profile</div>
+                <div class="coding-profile mt-2 mb-0">
+                    <div class="coding-info d-grid">
+                        <a href="{{ Coder.Hackerrank }}" target="_blank" class="btn btn-outline-light">Click to See profile</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-5 col-8 p-3 my-sm-2 my-2" id="coder-box" data-aos="fade-left" data-aos-duration="1500" data-aos-easing="ease-in-sine">
+                <div class="col-12 btn btn-dark">Github Profile</div>
+                <div class="coding-profile mt-2 mb-0">
+                    <div class="coding-info d-grid">
+                        <a href="{{ Coder.Github }}" target="_blank" class="btn btn-outline-light">Click to See profile</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-5 col-8 p-3 my-sm-2 my-2" id="coder-box" data-aos="fade-right" data-aos-duration="1500" data-aos-easing="ease-in-sine">
+                <div class="col-12 btn btn-dark">Linkedin Profile</div>
+                <div class="coding-profile mt-2 mb-0">
+                    <div class="coding-info d-grid">
+                        <a href="{{ Coder.Linkedin }}" target="_blank" class="btn btn-outline-light">Click to See profile</a>
+                    </div>
+                </div>
+            </div>
+        {% else %}
+        <div class="col-lg-5 col-md-6 col-sm-7 col-9 text-dark p-4 " id="coding-link-form">
+            <form action="" method="post">
+                <div class="col-12 btn btn-dark">Fill the Details</div>
+                {% csrf_token %}
+                <div class="form-group mt-3">
+                    <label for="">LeetCode link</label>
+                    <input type="url" class="form-control" name="leetcode" placeholder="paste here">
+                    <a href="https://leetcode.com/accounts/signup/" class="btn btn-outline-dark float-end my-1" target="_blank">Create</a>
+                </div>
+                <div class="form-group mt-3">
+                    <label for="">Github link</label>
+                    <input type="url" class="form-control" name="github" placeholder="paste here">
+                    <a href="https://github.com/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F&source=header-home" class="btn btn-outline-dark float-end my-1" target="_blank">Create</a>
+                </div>
+                <div class="form-group mt-3">
+                    <label for="">Hackerrank link</label>
+                    <input type="url" class="form-control" name="hackerrank" placeholder="paste here">
+                    <a href="https://www.hackerrank.com/dashboard" class="btn btn-outline-dark float-end my-1" target="_blank">Create</a>
+                </div>
+                <div class="form-group mt-3">
+                    <label for="">Linkedin link</label>
+                    <input type="url" class="form-control" name="linkedin" placeholder="paste here">
+                    <a href="https://www.linkedin.com/signup/cold-join?trk=guest_homepage-basic_nav-header-join"  class="btn btn-outline-dark float-end my-1" target="_blank">Create</a>
+                </div>
+                <div class="d-grid mt-5">
+                    <input type="submit" value="Save" class="btn btn-dark">
+                </div>
+            </form>
+        </div>
+        {% endif %}
+    </div>
+</div>
+
+{% if messages %}
+    {% for message in messages %}
+        {% if message.tags == 'success' %}
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <script>
+            var m = '{{message}}';
+            swal('', m, 'success');
+        </script> 
+        {% else %}
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <script>
+            var m = '{{message}}';
+            swal('Error', m, 'error');
+        </script>
+            
+        {% endif %}
+    {% endfor %}
+{% endif %}
+
+{% endblock %}

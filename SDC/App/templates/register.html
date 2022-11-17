@@ -1,0 +1,112 @@
+{% extends 'base.html' %}
+{% block title %}Registration{% endblock %}
+{% block nav-brand %}
+    <a class="navbar-brand ms-2 fs-3" href="#" style="font-family: cursive;">Registration</a>
+{% endblock nav-brand %}
+{% block register %}{% endblock register %}
+{% block data1 %}
+<div class="container-fluid register-page">
+    <div class="row d-flex justify-content-center py-4 register-content">
+        <div class="col-lg-6 col-md-7 col-sm-8 col-9 px-lg-5 px-md-4 px-sm-3 px-2 py-4 " id="registerationform">
+            <form {% block action %} action="" {% endblock %} method="post">
+                {% csrf_token %}
+                <div class="col-12 btn btn-outline-dark">{% block form_name %}Registeration Form{% endblock %} </div>
+                <div class="form-group mt-3">
+                    <label for="">First Name</label>
+                    <input type="text" name="fname" id="fname" class="form-control" {% block fname %}{% endblock %}>
+                </div>
+                <div class="form-group mt-3">
+                    <label for="">Last Name</label>
+                    <input type="text" name="lname" id="lname" class="form-control" {% block lname %}{% endblock %}>
+                </div>
+                
+
+                <div class="form-group mt-3">
+                    <label for="">Email</label>
+                    <div class="input-group">
+                        <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                        <input type="email" name="email" id="" class="form-control" {% block email %}{% endblock %}>
+                    </div>
+                </div>
+                <div class="form-group mt-3">
+                    <label for="">Mobile number</label>
+                    <div class="input-group">
+                        <span class="input-group-text"><i class="fas fa-phone"></i></span>
+                        <input type="text" name="phone" id="phone" class="form-control" {% block mobile %}{% endblock %}>
+                    </div>
+                </div>
+                <div class="form-group mt-3">
+                    <label for="">PRN</label>
+                    <div class="input-group">
+                        <input type="text" name="prn" id="prn" class="form-control" {% block prn %}{% endblock %}>
+                    </div>
+                </div>
+
+                <div class="form-group mt-3">
+                    <label for="">Branch</label>
+                        <select name="branch" id="" class="form-control" {% block branch %}{% endblock %}>
+                            <option value="Computer">Computer</option>
+                            <option value="Electrical">Electrical</option>
+                            <option value="Civil">Civil</option>
+                            <option value="Instrumentation">Instrumentation</option>
+                            <option value="Mechanical">Mechanical</option>
+                            <option value="Electronics and Telecommunication">Electronics and Telecommunication</option>
+                        </select>
+                </div>
+                        
+                <div class="form-group mt-3">
+                    <label for="">Year</label>
+                        <select name="year" id="" class="form-control" {% block year %}{% endblock %}>
+                            <option value="FY">FY</option>
+                            <option value="SY">SY</option>
+                            <option value="TY">TY</option>
+                            <option value="LY">LY</option>
+                        </select>
+                </div>
+                <div class="form-group mt-3">
+                    <label for="">Password</label>
+                    <div class="input-group">
+                        <span class="input-group-text"><i class="fas fa-key"></i></span>
+                        <input type="password" name="password" id="password" class="form-control" {% block pass %}{% endblock %}>
+                    </div>
+                    <input type="checkbox" onclick="showpass()"> Show password
+                </div>
+                <div class="form-group mt-3">
+                    <div class="d-grid">
+                        <button class="btn btn-primary">{% block btn %}Register{% endblock %}</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script>
+    function showpass(){
+        var x = document.getElementById("password");
+        if (x.type === "password") {
+            x.type = "text";
+        } else {
+            x.type = "password";
+        }
+    }
+</script>
+
+{% if messages %}
+    {% for message in messages %}
+        {% if message.tags == 'success' %}
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <script>
+            var m = '{{message}}';
+            swal('', m, 'success');
+        </script> 
+        {% else %}
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <script>
+            var m = '{{message}}';
+            swal('Error', m, 'error');
+        </script>
+            
+        {% endif %}
+    {% endfor %}
+{% endif %}
+{% endblock %}

@@ -1,0 +1,271 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/****************************************
+                BODY
+****************************************/
+body{
+    height: 100vh;
+    background-color: aqua;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+.show{
+    text-align: center;
+}
+/****************************************
+                HOME
+****************************************/
+.home-page{
+    height: 90vh;
+    position: relative;
+    top: 0;
+    background: url('../images/background.jpg');
+    background-position: center;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+.home-page::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .7);
+}
+.home-page-content{
+    position: relative;
+    
+}
+
+#loginform, .profile-box{
+    border: 2px solid white;
+    border-radius: 7px;
+    background-color: rgba(255, 255, 255, .5);
+}
+.profile-box .icons a i{
+    color:rgba(11, 17, 5, 0.936);
+}
+.profile-box .icons a i:hover{
+    color:rgba(17, 239, 224, 0.925);
+    transition-duration: .7s;
+}
+.img-box img{
+    height: 200px;
+    width: 100%;
+    border-radius: 10px;
+}
+.service-box{
+    box-shadow: 0 8px 16px 0  gray;
+    height: 100%;
+}
+
+.service-box img{
+    height: 155.6px;
+}
+#contactus{
+    position: relative;
+    background-image: url('../images/contact_us.jpg');
+    background-position: center;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+#contactus::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .7);
+}
+#contactus .contactus-content{
+    position: relative;
+}
+/****************************************
+                REGISTER
+****************************************/
+.register-page{
+    position: relative;
+    background-image: url('../images/registeration.jpg');
+    background-position: center;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.register-page::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .6);
+}
+.register-content{
+    position: relative;
+}
+#registerationform{
+    border: 2px solid white;
+    box-shadow: 0 16px 32px 0 gray;
+    background-color: rgba(255, 255, 255, 0.505);
+    border-radius: 10px;
+
+}
+#registerationform form input,#registerationform form select, #registerationform .input-group-text{
+    border: none;
+    border-bottom: 1px solid black;
+    background: transparent;
+}
+/****************************************
+                SERVICES
+****************************************/
+#services{
+    position: relative;
+    background-image: url('../images/services.jpg');
+    background-position: center;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+#services::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .7);
+}
+#services .services-content{
+    position: relative;
+}
+/****************************************
+                TEAM
+****************************************/
+#team-container{
+    /* background-image: linear-gradient(120deg, rgba(30, 129, 195, 0.84), rgba(165, 211, 102, 0.84), rgba(236, 106, 66, 0.461), rgba(184, 59, 237, 0.84));
+     */
+    position: relative;
+    background: url("../images/team.jpg");
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+#team-container::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .6);
+}
+#team-container .row{
+    position: relative;
+}
+#team-container .row .col-12{
+    color: white;
+}
+.team-card{
+    box-shadow: 0 8px 16px 0 gray;
+    margin: 15px;
+}
+.team-card img{
+    height: 250px;
+}
+.team-card:hover{
+    box-shadow: 0 16px 32px 0 gray;
+    transition-duration: .8s;
+}
+.team-card .card-body .icons a i:hover{
+   color: rgba(13, 218, 177, 0.888);
+}
+/****************************************
+                FOOTER
+****************************************/
+.social-medias a i{
+    color:rgba(225, 198, 21, 0.918);
+}
+.social-medias a i:hover{
+    transition-duration: .7s;
+    color: rgba(128, 112, 9, 0.918);
+}
+/****************************************
+                PROFILE
+****************************************/
+#profile{
+    position: relative;
+    background: url("../images/background2.jfif");
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#profile::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .6);
+}
+#profile-container{
+    position: relative;
+    height: 80vh;
+}
+#info-table {
+    border: 1px solid white;
+    padding: 15px;
+    border-radius: 7px;
+    background: rgba(255, 255, 255, .2);
+    box-shadow: 0 8px 16px 0 rgb(66, 57, 57);
+    overflow-x: auto;
+
+}
+
+
+/****************************************
+                CODING
+****************************************/
+#coding-container{
+    height: 80vh;
+    position: relative;
+    background-image: url('../images/coding_bg.jpg');
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+#coding-container::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    background: rgba(0, 0, 0, .6);
+}
+#coding-container-row{
+    position: relative;
+}
+#coding-container-row{
+    height: 100%;
+}
+#coder-box{
+    border: 2px white;
+    border-radius: 7px;
+    background: rgba(255, 255, 255, .4);
+}
+.coding-info a{
+    color:rgba(11, 12, 1, 0.982);
+}
+.coding-info a:hover{
+    color:rgba(243, 185, 11, 0.929);
+    transition-duration: .7s;
+}
+#coding-link-form{
+    border: 2px solid white;
+    border-radius: 7px;
+    background: rgba(255, 255, 255, 0.486);
+}

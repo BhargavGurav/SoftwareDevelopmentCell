@@ -1,0 +1,20 @@
+{% extends 'register.html' %}
+{% block title %}Edit User{% endblock title %}
+
+{% block nav-brand %}
+    <a class="navbar-brand ms-2 fs-3" href="#" style="font-family: cursive;">Editing Details</a>
+{% endblock nav-brand %}
+
+
+
+{% block action %} action="/edit/" {% endblock %}
+{% block form_name %}Edit Details{% endblock form_name %}
+{% block fname %}value="{{ user.first_name }}" disabled{% endblock %}
+{% block lname %}value="{{ user.last_name }}" disabled{% endblock %}
+{% block email %}value="{{ user.email }}" disabled{% endblock %}
+{% block mobile %}value="{{ student.Mobile }}"{% endblock %}
+{% block prn %}value="{{ student.PRN }}"{% endblock %}
+{% block branch %}value="{{ student.Branch }}"{% endblock %}
+{% block year %}value="{{ student.Year }}"{% endblock %}
+{% block pass %}value="{{ user.password }}" disabled{% endblock %}
+{% block btn %}Update{% endblock %}
